@@ -1,0 +1,48 @@
+# JARVIS OS - Advanced AI Operating System
+# Advanced AI Assistant for Windows with premium 3D UI
+
+# Core dependencies
+PyQt6>=6.6.0
+requests>=2.31.0
+ollama>=0.1.0
+
+# AI/ML Dependencies
+torch>=2.1.0
+torchvision>=0.16.0
+torchaudio>=2.1.0
+diffusers>=0.25.0
+transformers>=4.36.0
+accelerate>=0.25.0
+
+# Voice I/O
+openai-whisper>=20231117
+pyttsx3>=2.90
+TTS>=0.22.0
+sounddevice>=0.4.6
+scipy>=1.11.0
+
+# Computer Vision
+opencv-python>=4.8.0
+pillow>=10.0.0
+numpy>=1.24.0
+
+# Media Processing
+moviepy>=1.0.3
+pydub>=0.25.0
+
+# OS Control
+pyautogui>=0.9.54
+psutil>=5.9.0
+
+# Web Scraping
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Git Integration
+gitpython>=3.1.0
+
+# Build Tools
+pyinstaller>=6.3.0
+
+# Utilities
+python-dateutil>=2.8.0
