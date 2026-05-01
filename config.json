@@ -1,0 +1,67 @@
+{
+    "jarvis_name": "Jarvis",
+    "activation_phrase": "Hey Jarvis",
+    "language": "en-US",
+    "voice_rate": 1.0,
+    "voice_volume": 1.0,
+    "ai_model": "llama3",
+    "ai_provider": "ollama",
+    "storage_path": "./storage",
+    "encrypted_storage": true,
+    "theme": "holographic",
+    "animations": {
+        "enabled": true,
+        "fps": 60,
+        "particle_count": 100
+    },
+    "voice_languages": [
+        "en-US", "en-GB", "hi-IN", "es-ES", "fr-FR", "de-DE", 
+        "it-IT", "pt-BR", "ru-RU", "zh-CN", "ja-JP", "ko-KR",
+        "ar-SA", "nl-NL", "pl-PL", "tr-TR", "vi-VN", "th-TH",
+        "id-ID", "ms-MY", "fil-PH", "bn-IN", "ta-IN", "te-IN",
+        "mr-IN", "pa-IN", "gu-IN", "kn-IN", "ml-IN", "ur-PK",
+        "fa-IR", "he-IL", "el-GR", "cs-CZ", "hu-HU", "ro-RO",
+        "uk-UA", "bg-BG", "hr-HR", "sk-SK", "sl-SI", "lt-LT",
+        "lv-LV", "et-EE", "fi-FI", "da-DK", "no-NO", "sv-SE",
+        "is-IS", "ca-ES", "gl-ES", "eu-ES", "sw-KE", "sw-TZ"
+    ],
+    "modules": {
+        "image_generation": {
+            "enabled": true,
+            "max_resolution": "16K",
+            "model": "stable-diffusion-xl"
+        },
+        "video_generation": {
+            "enabled": true,
+            "model": "svd",
+            "videos_per_minute": 500000,
+            "images_per_minute": 1000000
+        },
+        "coding_agent": {
+            "enabled": true,
+            "vscode_integration": true,
+            "auto_fix_bugs": true
+        },
+        "learning_engine": {
+            "enabled": true,
+            "github": true,
+            "books": true,
+            "web": true,
+            "app_stores": true
+        },
+        "local_ai": {
+            "enabled": true,
+            "provider": "ollama",
+            "offline_mode": true
+        }
+    },
+    "storage": {
+        "capacity": "50GB",
+        "encrypted": true,
+        "encryption_key_path": "./keys/encryption.key"
+    },
+    "video_storage": {
+        "capacity": "20GB",
+        "encrypted": true
+    }
+}

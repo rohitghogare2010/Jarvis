@@ -1,48 +1,59 @@
-# JARVIS OS - Advanced AI Operating System
-# Advanced AI Assistant for Windows with premium 3D UI
+# Jarvis AI OS - Python Dependencies
+# Advanced AI Operating System Assistant
 
-# Core dependencies
-PyQt6>=6.6.0
-requests>=2.31.0
+# Core
+numpy>=1.24.0
+pandas>=2.0.0
+python-dateutil>=2.8.2
+
+# AI & ML
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+diffusers>=0.20.0
+accelerate>=0.20.0
+
+# Local AI
 ollama>=0.1.0
-
-# AI/ML Dependencies
-torch>=2.1.0
-torchvision>=0.16.0
-torchaudio>=2.1.0
-diffusers>=0.25.0
-transformers>=4.36.0
-accelerate>=0.25.0
-
-# Voice I/O
-openai-whisper>=20231117
-pyttsx3>=2.90
-TTS>=0.22.0
-sounddevice>=0.4.6
-scipy>=1.11.0
 
 # Computer Vision
 opencv-python>=4.8.0
-pillow>=10.0.0
-numpy>=1.24.0
+Pillow>=10.0.0
 
-# Media Processing
-moviepy>=1.0.3
-pydub>=0.25.0
+# Voice I/O
+speechrecognition>=3.10.0
+pyttsx3>=2.90
+gtts>=2.4.0
 
-# OS Control
-pyautogui>=0.9.54
+# System Control
 psutil>=5.9.0
+pywin32>=306; platform_system == "Windows"
+wmi>=1.5.1; platform_system == "Windows"
 
-# Web Scraping
+# Web & Networking
+requests>=2.31.0
 beautifulsoup4>=4.12.0
-lxml>=4.9.0
+selenium>=4.12.0
 
-# Git Integration
-gitpython>=3.1.0
+# Storage & Security
+cryptography>=41.0.0
+pyAesCrypt>=6.0.0
 
-# Build Tools
-pyinstaller>=6.3.0
+# UI & Graphics
+pyqt5>=5.15.0
+pywebview>=4.3.0
+pythreejs>=2.4.0
 
-# Utilities
-python-dateutil>=2.8.0
+# Development Tools
+ipykernel>=6.25.0
+black>=23.7.0
+flake8>=6.1.0
+
+# Documentation
+mkdocs>=1.5.0
+mkdocs-material>=9.1.0
+
+# Package Management
+pip>=23.0
+setuptools>=68.0.0
+wheel>=0.41.0

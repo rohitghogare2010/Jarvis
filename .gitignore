@@ -1,16 +1,54 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-.env
-venv/
-ENV/
-build/
+*.so
+.Python
+*.egg-info/
 dist/
-*.spec
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Storage
+storage/
+media_storage/
+keys/
+models/
+cache/
+*.jarvis-cache
+
+# Logs
+logs/
 *.log
-*.wav
-*.mp4
-*.png
-*.jpg
-config.json
-RS-AI-Cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Build output
+release/
+
+# Secrets
+*.pem
+*.key
+.env

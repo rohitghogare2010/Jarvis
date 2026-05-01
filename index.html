@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis AI OS - Advanced Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Particle System -->
+    <div id="particles"></div>
+    
+    <!-- Main Jarvis Interface -->
+    <div id="jarvis-interface">
+        <!-- Header -->
+        <header class="jarvis-header">
+            <div class="logo-section">
+                <div class="jarvis-orb">
+                    <div class="orb-inner"></div>
+                    <div class="orb-ring ring-1"></div>
+                    <div class="orb-ring ring-2"></div>
+                    <div class="orb-ring ring-3"></div>
+                </div>
+                <div class="logo-text">
+                    <h1>JARVIS</h1>
+                    <span class="version">v2.0.0-BETA</span>
+                </div>
+            </div>
+            <div class="status-indicators">
+                <div class="status-dot online"></div>
+                <span class="status-text">Systems Online</span>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="main-content">
+            <!-- Left Panel - AI Modules -->
+            <aside class="left-panel glass-panel">
+                <h2>🎯 AI Modules</h2>
+                <div class="module-grid">
+                    <button class="module-btn" data-module="visual-ai">
+                        <span class="icon">👁️</span>
+                        <span class="label">Visual AI</span>
+                    </button>
+                    <button class="module-btn" data-module="image-gen">
+                        <span class="icon">🖼️</span>
+                        <span class="label">Image Gen</span>
+                    </button>
+                    <button class="module-btn" data-module="video-gen">
+                        <span class="icon">🎬</span>
+                        <span class="label">Video Gen</span>
+                    </button>
+                    <button class="module-btn" data-module="coding">
+                        <span class="icon">💻</span>
+                        <span class="label">Coding</span>
+                    </button>
+                    <button class="module-btn" data-module="learning">
+                        <span class="icon">📚</span>
+                        <span class="label">Learning</span>
+                    </button>
+                    <button class="module-btn" data-module="projects">
+                        <span class="icon">🏗️</span>
+                        <span class="label">Projects</span>
+                    </button>
+                    <button class="module-btn" data-module="local-ai">
+                        <span class="icon">🤖</span>
+                        <span class="label">Local AI</span>
+                    </button>
+                    <button class="module-btn" data-module="os-control">
+                        <span class="icon">⚙️</span>
+                        <span class="label">OS Control</span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Center - Main Interface -->
+            <section class="center-panel">
+                <!-- Voice Visualization -->
+                <div class="voice-hologram glass-panel">
+                    <div class="hologram-container">
+                        <div class="voice-visualizer">
+                            <canvas id="voice-canvas" width="400" height="200"></canvas>
+                        </div>
+                        <div class="voice-rings">
+                            <div class="vring vr1"></div>
+                            <div class="vring vr2"></div>
+                            <div class="vring vr3"></div>
+                        </div>
+                        <div class="central-orb">
+                            <div class="core"></div>
+                        </div>
+                    </div>
+                    <p class="voice-status">Listening for "Hey Jarvis"...</p>
+                </div>
+
+                <!-- Chat Interface -->
+                <div class="chat-container glass-panel">
+                    <div class="chat-header">
+                        <h3>💬 Command Center</h3>
+                        <div class="chat-actions">
+                            <button class="mic-btn" id="mic-toggle">
+                                <span class="mic-icon">🎤</span>
+                            </button>
+                            <button class="clear-btn" id="clear-chat">🗑️</button>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message system">
+                            <span class="msg-icon">🤖</span>
+                            <div class="msg-content">
+                                <p>Hello, Sir. I am Jarvis, your AI assistant. How may I help you today?</p>
+                                <span class="timestamp">Just now</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-section">
+                        <input type="text" id="chat-input" placeholder="Type your command or speak..." />
+                        <button class="send-btn" id="send-btn">➤</button>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions glass-panel">
+                    <h3>⚡ Quick Actions</h3>
+                    <div class="action-grid">
+                        <button class="action-btn" data-action="generate-image">
+                            <span>🎨</span>
+                            <span>Generate Image</span>
+                        </button>
+                        <button class="action-btn" data-action="generate-video">
+                            <span>🎬</span>
+                            <span>Generate Video</span>
+                        </button>
+                        <button class="action-btn" data-action="write-code">
+                            <span>💻</span>
+                            <span>Write Code</span>
+                        </button>
+                        <button class="action-btn" data-action="learn">
+                            <span>📚</span>
+                            <span>Learn</span>
+                        </button>
+                        <button class="action-btn" data-action="build-project">
+                            <span>🏗️</span>
+                            <span>Build Project</span>
+                        </button>
+                        <button class="action-btn" data-action="system-control">
+                            <span>🖥️</span>
+                            <span>System</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel - Status & Info -->
+            <aside class="right-panel">
+                <!-- System Status -->
+                <div class="glass-panel status-panel">
+                    <h3>📊 System Status</h3>
+                    <div class="status-items">
+                        <div class="status-item">
+                            <span class="label">AI Engine</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="value">100%</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Voice I/O</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                            <span class="value">95%</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Storage</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="value">45%</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Local AI</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="value">Online</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capabilities -->
+                <div class="glass-panel capabilities-panel">
+                    <h3>🚀 Capabilities</h3>
+                    <ul class="capabilities-list">
+                        <li>🌐 50+ Languages</li>
+                        <li>🎨 8K/16K Image Gen</li>
+                        <li>🎬 SVD Video Gen</li>
+                        <li>💻 VS Code Integration</li>
+                        <li>🔧 Auto Bug Fix</li>
+                        <li>📚 GitHub Learning</li>
+                        <li>🤖 Ollama Offline AI</li>
+                        <li>💾 50GB Encrypted Storage</li>
+                    </ul>
+                </div>
+
+                <!-- Processing Stats -->
+                <div class="glass-panel stats-panel">
+                    <h3>⚡ Processing Power</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-value">50L+</span>
+                            <span class="stat-label">Videos/min</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">1Cr+</span>
+                            <span class="stat-label">Images/min</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">20GB</span>
+                            <span class="stat-label">Video Storage</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer -->
+        <footer class="jarvis-footer">
+            <div class="footer-left">
+                <span>© 2024 Jarvis AI OS</span>
+            </div>
+            <div class="footer-center">
+                <span class="typing-indicator">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </span>
+                <span id="footer-status">Ready to assist</span>
+            </div>
+            <div class="footer-right">
+                <button class="minimize-btn" id="minimize-to-tray">—</button>
+                <button class="settings-btn">⚙️</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Module Modals -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal glass-panel" id="module-modal">
+            <button class="modal-close" id="modal-close">✕</button>
+            <h2 id="modal-title">Module</h2>
+            <div class="modal-content" id="modal-content">
+                <!-- Dynamic content here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
